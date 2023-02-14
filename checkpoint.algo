@@ -1,0 +1,32 @@
+ALGORITHM readingSentence 
+VAR
+    Sentence : STRING;
+    Len_Sentence : INTEGER := 0;
+    Num_Words : INTEGER := 0;
+    Num_Vowels : INTEGER := 0;
+BEGIN
+    Write("Give me your sentence");
+    Read(Sentence);
+    REPEAT
+        SWITCH (Sentence[Len_Sentence]) DO
+            case a : 
+            case o : 
+            case i : 
+            case e : 
+            case y : 
+            case A : 
+            case O : 
+            case I : 
+            case E : 
+            case Y : Num_Vowels := Num_Vowels +1; BREAK;
+            default 
+        END_SWITCH
+        IF (Sentence[Len_Sentence] = " ") THEN
+            Num_Words = Num_Words + 1;
+        END_IF
+        Len_Sentence = Len_Sentence + 1;
+    UNTIL (Sentence[Len_Sentence] = ".")
+    Num_Words = Num_Words + 1;
+    Len_Sentence = Len_Sentence + 1;
+    Write("The number of the characters in the sentence is : ",Len_Sentence,",The number of the Vowels is :  ",Num_Vowels,", The number of Words is : ",Num_Words);
+END
