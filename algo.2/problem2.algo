@@ -1,0 +1,14 @@
+PROCEDURE dot_product(V1, V2 : ARRAY_OF INTEGER[3])
+VAR
+    I,PS: INTEGER;
+BEGIN
+    FOR I FROM 0 TO V1.length-1 STEP 1  DO
+        PS = V1[I] + V2[I];
+        I = I + 1;
+    END_FOR
+    IF (PS=0) THEN
+        Write("The two vectors are Orthogonal")
+    ELSE
+        Write("The two vectors aren't Orthogonal")
+    END_IF
+END

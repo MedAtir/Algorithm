@@ -1,0 +1,37 @@
+ALGORITHM Problem1
+VAR
+    Sum : INTEGER := 0;
+    Arr1 : ARRAY_OF INTEGER[5];
+    Arr2 : ARRAY_OF INTEGER[5];
+    I,J : INTEGER;
+BEGIN
+    Write("Give your first Array");
+    Read(Arr1);
+    Write("Give your second Array");
+    Read(Arr2);
+
+
+    FOR I FROM 0 TO Arr1.length-1 STEP 1  DO
+        FOR J FROM 0 TO Arr2.length-1 STEP 1  DO
+            IF (Arr1[I] = Arr2[J]) THEN
+                J = J + 1;
+            ELSE
+                Sum = Arr2[J];
+                J = J + 1;
+            END_IF
+        END_FOR
+    END_FOR
+
+
+    FOR J FROM 0 TO Arr2.length-1 STEP 1  DO
+        FOR I FROM 0 TO Arr1.length-1 STEP 1  DO
+            IF (Arr2[J] = Arr1[I]) THEN
+                I = I + 1;
+            ELSE
+                Sum = Arr1[I];
+                I = I + 1;
+            END_IF
+        END_FOR
+    END_FOR
+    Write(Sum)
+END
