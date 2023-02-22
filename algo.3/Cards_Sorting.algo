@@ -1,0 +1,17 @@
+ALGORITHM CardsSorting
+VAR
+    InitArray : ARRAY_OF INTEGER[n];
+    LastArray : ARRAY_OF INTEGER[InitArray.length+1];
+    I : INTEGER := 0;
+    Card, J : INTEGER;
+BEGIN
+    IF (InitArray[I] > Card) THEN
+        LastArray[I] = Card;
+        I = I + 1;
+        FOR J FROM I TO LastArray.length-1 STEP 1 DO
+            LastArray[J] = InitArray[I];
+            I = I + 1;
+            J = J + 1;
+        END_FOR
+    END_IF
+END
