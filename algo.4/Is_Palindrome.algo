@@ -1,0 +1,23 @@
+ALGORITHM IsPalindrome
+VAR
+    word : STRING[]; //word given by user
+    i : INTEGER;
+    j : INTEGER := word.length;
+BEGIN
+    Write("Give me the word you want to check");
+    Read(word);
+    IF (word.length = 0 || word.length = 1) THEN
+        Write("your word in a palidrome");
+    ELSE
+        FOR i FROM 0 TO word.length STEP 1  DO
+            IF (word[i] <> word[j]) THEN
+                Write("Your word isn't a palindrome");
+                Break;
+            ELSE
+                j=j-1;
+            END_IF
+            END_IF
+        END_FOR
+        Write("Your word is a palindrome");
+    END_IF
+END
